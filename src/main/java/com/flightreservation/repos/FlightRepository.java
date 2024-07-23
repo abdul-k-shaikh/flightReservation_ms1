@@ -1,5 +1,6 @@
 package com.flightreservation.repos;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -12,6 +13,12 @@ import com.flightreservation.entities.Flight;
 public interface FlightRepository extends JpaRepository<Flight, Long> {
 	
 	@Query("from Flight where departureCity=:departureCity and arrivalCity=:arrivalCity and dateOfDeparture=:dateOfDeparture")
-	List<Flight> findflight(@Param("departureCity") String from, @Param("arrivalCity") String to,@Param("dateOfDeparture") Date departureDate);
+	List<Flight> findflights(@Param("departureCity") String from, @Param("arrivalCity") String to,
+			@Param("dateOfDeparture") LocalDate departureDate);
 
 }
+
+
+//@Query("from Flight where departureCity=:departureCity and arrivalCity=:arrivalCity and dateOfDeparture=:dateOfDeparture")
+//List<Flight> findflights(@Param("departureCity") String from, @Param("arrivalCity") String to,
+//		@Param("dateOfDeparture") Date departureDate);

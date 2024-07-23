@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 import lombok.Data;
 
@@ -16,6 +17,10 @@ public class Reservation  {
 	private Long id;
 	private Boolean checkedIn;
 	private int numberOfBags;
+	
+	@OneToOne
 	private Passenger passenger;
+	
+	@OneToOne
 	private Flight flight;
 }

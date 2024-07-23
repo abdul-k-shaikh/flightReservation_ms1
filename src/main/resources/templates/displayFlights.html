@@ -3,30 +3,32 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
- <link rel="stylesheet" th:href="@{/css/style.css}" />
+<link rel="stylesheet" th:href="@{/css/style.css}" />
 
 <title>Flights</title>
 </head>
 <body>
-<h2>Flights:</h2>
-<table>
-<tr><th>Airlines</th>
-<th>Departure City</th>
-<th>Arrival City</th>
-<th>Departure Time</th>
+	<h2>Flights:</h2>
+	<table>
+		<tr>
+			<th>Airlines</th>
+			<th>Departure City</th>
+			<th>Arrival City</th>
+			<th>Departure Time</th>
 
-</tr>
-
-
-<tr th:each="flight:${flights}">
-<td th:text="${flight.operatingAirlines}"></td>
-<td th:text="${flight.departureCity}"></td>
-<td th:text="${flight.arrivalCity}"></td>
-<td th:text="${flight.estimatedDepartureTime}"></td>
-<td><a th:href="@{'showCompleteReservation?flightId='+${flight.id}}">Select</a></td>
-</tr>
+		</tr>
 
 
-</table>
+		<tr th:each="flight:${flights}">
+			<td th:text="${flight.operatingAirlines}"></td>
+			<td th:text="${flight.departureCity}"></td>
+			<td th:text="${flight.arrivalCity}"></td>
+			<td th:text="${flight.estimatedDepartureTime}"></td>
+			<td><a
+				th:href="@{'showCompleteReservation?flightId='+${flight.id}}">Select</a></td>
+		</tr>
+
+
+	</table>
 </body>
 </html>
